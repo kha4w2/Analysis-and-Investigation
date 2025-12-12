@@ -1,6 +1,6 @@
 
 
-# **Windows Endpoint Compromise Investigation Report**
+# **Windows Endpoint Compromise Investigation Report (TCM LAB)**
 
 ## **Overview**
 
