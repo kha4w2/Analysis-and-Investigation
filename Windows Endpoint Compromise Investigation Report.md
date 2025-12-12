@@ -83,7 +83,6 @@ The DLLs beginning with the letter **M** were:
 
 (*DLLs tab screenshot*)
 
-<img width="975" height="180" alt="image" src="https://github.com/user-attachments/assets/8cb9d5da-f8b6-473c-9a9b-1ab6a98396bc" />
 
 <img width="1711" height="316" alt="Screenshot 2025-12-10 011854" src="https://github.com/user-attachments/assets/c8b1d7a6-1e23-4709-8cd1-7977e3cae15d" />
 
