@@ -124,4 +124,100 @@
 
 ---
 
+# ✅ **Task 3 — Distinguishing Between Legitimate and Malicious PowerShell Executions**
+
+**Goal:** Identify executed PowerShell scripts and distinguish between legitimate IT activity and malicious execution.
+
+---
+
+## **1. Scoping PowerShell Execution Activity**
+
+**I filtered Kibana logs using the target host and `powershell.exe` to focus only on PowerShell process executions.**
+
+
+<img width="1917" height="907" alt="image" src="https://github.com/user-attachments/assets/9ec81586-560f-47a1-88aa-e1dddcc9985c" />
+
+
+## **2. Identifying the Relevant Event Type**
+
+**Since PowerShell execution is a process creation activity, I used Sysmon Event ID `1` to capture all PowerShell executions.**
+
+<img width="1912" height="920" alt="image" src="https://github.com/user-attachments/assets/8cb83e45-d836-486b-a3cc-661c393a9d69" />
+
+
+## **3. Filtering for PowerShell Script Executions**
+
+**I refined the query further by searching for `.ps1` within the command line to isolate PowerShell script executions.**
+
+
+<img width="1918" height="922" alt="image" src="https://github.com/user-attachments/assets/c58baab9-09b9-449a-a3b1-18f9c39a741e" />
+
+
+**Final Query Used:**
+
+```
+agent.name: "WIN-LJDLTDHLBH0" AND process.name: "powershell.exe" AND event.code: "1" AND *ps1*
+```
+
+---
+
+## **4. Reviewing Retrieved PowerShell Executions**
+
+**The query returned five PowerShell execution events — three legitimate and two suspicious.**
+
+<img width="1918" height="922" alt="image" src="https://github.com/user-attachments/assets/0235911e-e999-43bf-8926-b5c2f771ddee" />
+
+
+---
+
+## **5. Identifying Legitimate PowerShell Activity**
+
+
+<img width="1916" height="916" alt="image" src="https://github.com/user-attachments/assets/ed84f8a9-c54b-4c98-9996-79303d16e6c7" />
+
+
+**Legitimate executions were linked to routine IT operations and matched expected administrative behavior.**
+
+* **Script Name:** `DailyReport.ps1`
+* **Script Path:** `C:\IT\Scripts\`
+* **Execution Method:** `-File` parameter
+* **Parent Process:** `powershell.exe`
+* **User:** `Administrator`
+
+---
+
+## **6. Identifying Malicious PowerShell Activity**
+
+
+<img width="1913" height="922" alt="image" src="https://github.com/user-attachments/assets/b3892902-e20d-481e-980f-9f9735466bd8" />
+
+
+**Suspicious executions showed indicators of malicious behavior and abnormal execution patterns.**
+
+* **Script Name:** `ts.ps1`
+* **Script Path:** `C:\Users\Administrator\Downloads\`
+* **Execution Method:** `-Command` with Execution Policy Bypass
+* **Parent Process:** `explorer.exe`
+* **User:** `Administrator`
+
+---
+
+## **7. Final Classification Summary**
+
+### ✅ Legitimate PowerShell Execution
+
+* Script: **DailyReport.ps1**
+* Purpose: Scheduled IT administrative task
+
+### 🚨 Malicious PowerShell Execution
+
+* Script: **ts.ps1**
+* Indicators:
+
+  * Executed from user Downloads directory
+  * Used execution policy bypass
+  * Parented by `explorer.exe`
+
+---
+
 
