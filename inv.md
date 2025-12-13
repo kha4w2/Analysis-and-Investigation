@@ -220,7 +220,7 @@ agent.name: "WIN-LJDLTDHLBH0" AND process.name: "powershell.exe" AND event.code:
 
 ---
 
-# ✅ **Task 4: Identify and Decode Encoded PowerShell Commands
+# ✅ ** Task 4: Identify and Decode Encoded PowerShell Commands**
 Step 1: Hunt for Encoded PowerShell Execution and Narrow the Scope Using Elastic Query
 
 Searched for PowerShell process creation events containing encoded commands to identify potential obfuscated execution.
@@ -281,7 +281,60 @@ Reviewed the decoded commands and confirmed they only execute simple echo and Wr
 
 
 
-# Final Assessment
+# **Final Assessment**
 
    Confirmed that only two encoded commands were executed and both are legitimate and non-malicious, indicating no suspicious PowerShell activity.
 ---
+
+## Credential Dumping – Command Identification
+
+### Objective
+
+Identify credential dumping activity and list the commands used.
+
+---
+
+### Detection Method
+
+Searched for known credential dumping tools by monitoring suspicious command-line executions.
+
+<img width="975" height="471" alt="image" src="https://github.com/user-attachments/assets/eb1ef91a-a4ba-4ec5-995e-b0b745e927fb" />
+
+
+**Query Used:**
+
+```
+process.command_line: (*mimikatz* OR *nanodump* OR *procdump* OR *lsass.dmp* OR *DumpCreds* OR *sekurlsa* OR *logonpasswords*)
+AND agent.name: WIN-LJDLTDHLBHO
+```
+
+---
+
+### Detected Command
+
+
+<img width="975" height="462" alt="image" src="https://github.com/user-attachments/assets/1ada4322-42b1-45c3-81c2-a89e1dedd86a" />
+
+
+```
+"C:\Users\Administrator\Downloads\mimikatz-master\mimikatz-master\x64\mimikatz.exe" sekurlsa::logonpasswords
+```
+
+* Tool: Mimikatz
+* Technique: LSASS credential dumping
+* Privilege Level: Administrator
+
+---
+
+### Download Time and Source
+
+
+<img width="1906" height="841" alt="image" src="https://github.com/user-attachments/assets/661043d1-81d3-4dfc-b1ff-f32bc9e9f9c3" />
+
+
+* **Execution Time:** Dec 8, 2025 @ 11:04:54.050
+* **Download Path:** `C:\Users\Administrator\Downloads\...`
+* **Download Method:** Browser-based download
+
+---
+
