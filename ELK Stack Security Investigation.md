@@ -18,7 +18,10 @@ This report documents a security investigation conducted using the ELK (Elastics
 The objective of this investigation is to leverage ELK Stack capabilities to identify, analyze, and validate security threats on a Windows system by correlating log data, distinguishing legitimate from malicious activity, and detecting post-compromise behaviors such as credential dumping.
 
 ---
+## Scope of Investigation
 
+This investigation covers end-to-end threat detection and analysis using ELK Stack, including brute force authentication attempts, suspicious file creation, PowerShell execution hunting, encoded command analysis, and credential dumping detection through detailed log correlation and validation.
+---
 
 # ✅ **Task 1 — Brute Force Investigation (ELK Stack)**
 
