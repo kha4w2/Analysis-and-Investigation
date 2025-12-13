@@ -13,6 +13,12 @@ This report documents a security investigation conducted using the ELK (Elastics
 
 ---
 
+## Introduction
+
+This report documents a security investigation conducted using the ELK (Elasticsearch, Logstash, Kibana) Stack to analyze multiple security incidents on a Windows endpoint. The investigation focused on brute force attack detection, suspicious file creation analysis, PowerShell execution monitoring, and credential dumping identification. Through systematic log analysis and event correlation, several security events were identified, ranging from attempted unauthorized access to confirmed credential theft activity.
+
+---
+
 ## Objective
 
 The objective of this investigation is to leverage ELK Stack capabilities to identify, analyze, and validate security threats on a Windows system by correlating log data, distinguishing legitimate from malicious activity, and detecting post-compromise behaviors such as credential dumping.
