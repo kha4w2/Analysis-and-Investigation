@@ -220,7 +220,7 @@ agent.name: "WIN-LJDLTDHLBH0" AND process.name: "powershell.exe" AND event.code:
 
 ---
 
-Task4: Identify and Decode Encoded PowerShell Commands
+# ✅ **Task 4: Identify and Decode Encoded PowerShell Commands
 Step 1: Hunt for Encoded PowerShell Execution and Narrow the Scope Using Elastic Query
 
 Searched for PowerShell process creation events containing encoded commands to identify potential obfuscated execution.
