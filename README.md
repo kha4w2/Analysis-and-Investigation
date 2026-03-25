@@ -1,8 +1,5 @@
 <h1 align="center">🛡️ Windows Malware Eradication & DFIR Investigation Lab</h1>
 
-<h1 align="center"><img width="936" height="792" alt="image" src="https://github.com/user-attachments/assets/c765c4fe-c8c5-445c-bc11-441fab088480" /></h1>
-
-
 ---
 
 ## 🔎 Introduction
