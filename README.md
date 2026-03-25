@@ -194,7 +194,10 @@ The provided executable was manually executed. Immediately after execution, mult
 * Noticeable system resource consumption and user disruption.
 
 
-<img width="975" height="649" alt="image" src="https://github.com/user-attachments/assets/7043eee2-fe38-4a6b-a511-6fb851ef86c7" />
+<img width="975" height="507" alt="image" src="https://github.com/user-attachments/assets/8a2ca451-4a0b-4802-9553-7c8bbe60872e" />
+
+<img width="975" height="502" alt="image" src="https://github.com/user-attachments/assets/3019a6f8-62e5-49b4-bee1-412873a645c4" />
+
 
 
 This confirmed that the executable was actively running and intentionally designed to be disruptive.
@@ -213,7 +216,7 @@ Action taken:
 
 * The process was manually terminated using End Task.
 
-  <img width="975" height="744" alt="image" src="https://github.com/user-attachments/assets/0580b948-8e7d-4219-956f-ce1dc08319cb" />
+<img width="975" height="505" alt="image" src="https://github.com/user-attachments/assets/77478f69-a54e-45b3-a3b5-7b36194efcd8" />
 
 
 The process was successfully killed, confirming user-level control over the running instance.
@@ -260,19 +263,19 @@ Using RegSeek and the native Registry Editor, the following registry locations w
 ```
 HKLM\Software\Microsoft\Windows\CurrentVersion\Run
 ```
-<img width="975" height="520" alt="image" src="https://github.com/user-attachments/assets/247106a0-77e1-40f4-8156-bfc81569690f" />
+<img width="1918" height="1077" alt="image" src="https://github.com/user-attachments/assets/8b6f33a8-9688-49b2-b82a-bbd747a70176" />
 
 ```
 HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
 
 ```
-<img width="975" height="512" alt="image" src="https://github.com/user-attachments/assets/4e6b2334-a05e-4b6b-96f7-126512a7db90" />
+<img width="1910" height="1067" alt="image" src="https://github.com/user-attachments/assets/46a222e5-474f-42c0-8f5e-02c095be8835" />
 
 ```
 HKCU\Software\Microsoft\Windows\CurrentVersion\Run
 ```
 
-<img width="975" height="515" alt="image" src="https://github.com/user-attachments/assets/de09ad98-8f1c-4afa-b9bc-bd38327ebb86" />
+<img width="1918" height="1078" alt="Screenshot 2026-03-25 173037" src="https://github.com/user-attachments/assets/b9e0f6d9-9f70-42de-9e62-d3839440861c" />
 
 
 Initial analysis of HKLM Run and RunOnce keys showed only legitimate entries.
