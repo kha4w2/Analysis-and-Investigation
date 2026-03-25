@@ -43,11 +43,14 @@ The analyst’s task is to **investigate, contain, analyze, and fully eradicate*
 To Prepare the Malicious files of this lab:
 1. download this files:
 
+https://drive.google.com/file/d/1dQTHcCTKKbmTkr7UBMEfDnSH0ABfXsI0/view
+
 2. Extract the file 
 <img width="1923" height="677" alt="Screenshot 2026-03-25 183333" src="https://github.com/user-attachments/assets/e6814973-87fa-4487-af97-60de135aae1e" />
 
 3. Open this file
 
+<img width="1916" height="998" alt="image" src="https://github.com/user-attachments/assets/6abc5bd9-b713-436f-8a32-4bcc428f5008" />
 
 
 ---
