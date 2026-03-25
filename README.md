@@ -65,7 +65,7 @@ These logs are critical for tracing the executable’s behavior and supporting t
 The Local Group Policy Editor was accessed using:
 
 
-<img width="975" height="574" alt="image" src="https://github.com/user-attachments/assets/15e0c9b7-8818-4db0-bb85-78b3a6730abb" />
+<img width="1916" height="1075" alt="image" src="https://github.com/user-attachments/assets/a8e45692-08d5-4ba3-bda5-a0ece88b116a" />
 
 
 ```
@@ -81,7 +81,6 @@ Computer Configuration
 → System Audit Policies – Local Group Policy Object
 
 
-<img width="975" height="737" alt="image" src="https://github.com/user-attachments/assets/727ca7b4-1e5d-4447-940d-b88cf28cbbdc" />
 
 
 ---
