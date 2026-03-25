@@ -612,16 +612,16 @@ This behavior confirms that the malware is a PyInstaller-packed executable that 
 
 Malware Capabilities Confirmed
 
-Manual execution via user interaction
-User-level persistence via HKCU\Software\Microsoft\Windows\CurrentVersion\Run key
-Self-spawning process behavior (child processes created by original executable)
-No privilege escalation or process injection detected
-Reads critical system DLLs (e.g., kernel.appcore.dll) during execution
-Stages runtime components in Temp directory (_MEI*)
-PyInstaller-packed executable dynamically extracts Python runtime & libraries
-Includes cryptographic (libcrypto-3.dll) and networking (_socket.pyd) modules
-High resource consumption and user disruption (pop-ups, multiple apps opened)
-Full eradication achieved via registry key removal and Temp cleanup
+- Manual execution via user interaction  
+- User-level persistence via `HKCU\Software\Microsoft\Windows\CurrentVersion\Run` key  
+- Self-spawning process behavior (child processes created by original executable)  
+- No privilege escalation or process injection detected  
+- Reads critical system DLLs (e.g., `kernel.appcore.dll`)  
+- Stages runtime components in Temp directory (`_MEI*`)  
+- PyInstaller-packed executable dynamically extracts Python runtime & libraries  
+- Includes cryptographic (`libcrypto-3.dll`) and networking (`_socket.pyd`) modules  
+- High resource consumption and user disruption (pop-ups, multiple apps opened)  
+- Full eradication achieved via registry key removal and Temp cleanup
 ---
 
 ## 6. Eradication Status
