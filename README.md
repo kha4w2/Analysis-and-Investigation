@@ -448,7 +448,7 @@ The investigation focused on:
 <img width="1918" height="1003" alt="image" src="https://github.com/user-attachments/assets/625e02fd-63c7-4566-9b49-e80594d47df3" />
 
 
-<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/28b95025-cf59-4b9e-b9bb-cd3e7cde0d04" />
+<img width="1917" height="1078" alt="Screenshot 2026-03-25 185239" src="https://github.com/user-attachments/assets/363ad136-7e0c-489c-b987-dd70df6c2296" />
 
 
 By filtering for Event ID 4688 and searching for the unique executable name:
@@ -479,7 +479,7 @@ This confirms the executable acted as the Initial Dropper / Loader and represent
 
 ### 3.2 Persistence Confirmation via Execution Context
 
-<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/2e5c59be-2b71-4f2d-b845-1ee2070f0e6d" />
+<img width="1912" height="1073" alt="image" src="https://github.com/user-attachments/assets/edb6f445-c0d8-4215-aad5-4a5c446e9524" />
 
 
 The parent process being explorer.exe and execution under a standard user account strongly supports the earlier finding that persistence was achieved via:
@@ -514,7 +514,7 @@ The malware exhibited self-spawning behavior, creating additional instances from
 
 ## 4. File System Activity Analysis (Event ID 4663)
 
-<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/d080f089-6260-4b72-bd69-318db2b66fa8" />
+<img width="1918" height="1075" alt="image" src="https://github.com/user-attachments/assets/f4731426-654e-4335-844e-1c9bb504a61d" />
 
 
 
