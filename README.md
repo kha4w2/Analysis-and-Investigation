@@ -114,7 +114,7 @@ Configuration applied:
 * Audit File System → Success and Failure
 
 
-<img width="975" height="740" alt="image" src="https://github.com/user-attachments/assets/54167c39-946d-43e9-aaa2-323e733a6a11" />
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/7641ba85-c0e3-4d78-9e2b-b632f8135d01" />
 
 
 This enables logging of file level interactions such as file creation, modification, and deletion.
@@ -131,7 +131,7 @@ Global Object Access Auditing
 → File System
 
 
-<img width="975" height="713" alt="image" src="https://github.com/user-attachments/assets/ac190cab-5218-4292-92a8-7f35fb09ca12" />
+<img width="1912" height="1073" alt="image" src="https://github.com/user-attachments/assets/1ac94350-8361-45f9-bf9f-d4440775d0b7" />
 
 
 ---
@@ -150,19 +150,13 @@ Actions performed:
 * Enabled Success auditing
 * Granted Full Control permissions (all access types)
 
-  <img width="975" height="728" alt="image" src="https://github.com/user-attachments/assets/e3c593c7-190d-4836-83d7-7d4e3735e82d" />
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/6c2e9d21-6f02-4064-a874-ef9a15210676" />
 
 
-<img width="975" height="552" alt="image" src="https://github.com/user-attachments/assets/21552cf8-407f-4bd3-9080-69c614c21b15" />
+<img width="1906" height="1065" alt="image" src="https://github.com/user-attachments/assets/4d536ef7-2359-4864-88b5-0596d52b38a0" />
 
 
-<img width="975" height="652" alt="image" src="https://github.com/user-attachments/assets/6b3167cb-ea6c-43a7-8a18-bdab61874c1b" />
-
-
-<img width="975" height="603" alt="image" src="https://github.com/user-attachments/assets/7eb58b0c-e790-42b9-9d58-30e7ab0caba0" />
-
-
-<img width="975" height="572" alt="image" src="https://github.com/user-attachments/assets/5007b998-ba80-44a0-8b56-3c8af3f5f4be" />
+<img width="917" height="591" alt="image" src="https://github.com/user-attachments/assets/511ef1d0-3510-40cc-8564-acb792d0a98d" />
 
 
 This ensures comprehensive logging of all file system activities across the system.
