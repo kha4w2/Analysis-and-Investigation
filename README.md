@@ -259,7 +259,7 @@ However, since the executable continued to run after deletion and reboot, the fo
 The investigation focused on Registry Run Keys, a common persistence technique.
 
 Using RegSeek and the native Registry Editor, the following registry locations were reviewed:
-
+URL: https://regseek.github.io/
 ```
 HKLM\Software\Microsoft\Windows\CurrentVersion\Run
 ```
@@ -275,7 +275,7 @@ HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
 HKCU\Software\Microsoft\Windows\CurrentVersion\Run
 ```
 
-<img width="1918" height="1078" alt="Screenshot 2026-03-25 173037" src="https://github.com/user-attachments/assets/b9e0f6d9-9f70-42de-9e62-d3839440861c" />
+<img width="1918" height="1078" alt="Screenshot 2026-03-25 173037" src="https://github.com/user-attachments/assets/d30cf696-c9bb-4bda-995a-174fc102b245" />
 
 
 Initial analysis of HKLM Run and RunOnce keys showed only legitimate entries.
