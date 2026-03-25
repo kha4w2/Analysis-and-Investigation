@@ -283,7 +283,7 @@ HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
 HKCU\Software\Microsoft\Windows\CurrentVersion\Run
 ```
 
-<img width="1918" height="1078" alt="Screenshot 2026-03-25 173037" src="https://github.com/user-attachments/assets/d30cf696-c9bb-4bda-995a-174fc102b245" />
+<img width="1918" height="1077" alt="Screenshot 2026-03-25 210623" src="https://github.com/user-attachments/assets/367d2621-ea9d-4b29-8235-07439354d044" />
 
 
 Initial analysis of HKLM Run and RunOnce keys showed only legitimate entries.
