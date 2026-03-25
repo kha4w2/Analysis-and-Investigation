@@ -95,7 +95,7 @@ Under Detailed Tracking, the following subcategories were configured:
 * Audit Process Termination → Success and Failure
 
 
-<img width="975" height="570" alt="image" src="https://github.com/user-attachments/assets/c1634e0c-2c62-45d3-9128-4ee3635d2321" />
+<img width="377" height="153" alt="image" src="https://github.com/user-attachments/assets/0b81a426-aa01-45c1-9bf3-6f0e72bcde65" />
 
 
 This ensures that all processes launched or terminated by the executable are logged for analysis.
