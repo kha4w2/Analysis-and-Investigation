@@ -215,7 +215,7 @@ To contain the activity, Task Manager was opened and the malicious process was i
 
 Observed process:
 
-* eradication_lab.exe / runme.exe (multiple instances)
+* what_have_i_become.exe
 
 Action taken:
 
@@ -297,7 +297,7 @@ HKCU\Software\Microsoft\Windows\CurrentVersion\Run
 
 A suspicious registry value was identified:
 
-* Value Name: RunMeBro
+* Value Name: RunMe
 * Value Type: REG_SZ
 * Value Data:
 * C:\Users\Khaled\AppData\Roaming\runme.exe
@@ -522,12 +522,12 @@ The malware exhibited self-spawning behavior, creating additional instances from
 ### 4.1 Identification of Relevant Object Access Events
 
 
-<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/5a16b2fa-c792-4a13-85b0-d798d0a08b22" />
+<img width="1918" height="1077" alt="image" src="https://github.com/user-attachments/assets/81f6bd95-29cf-45d0-b5a3-0fcd595c5232" />
 
 
-<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/e76914c1-3400-48b1-b470-191872246c1c" />
+<img width="1903" height="1017" alt="image" src="https://github.com/user-attachments/assets/bde905db-0f5a-4679-9b6b-9418f59a4abd" />
 
-<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/5930b4e7-31c5-4319-ae71-3548e175c6cf" />
+<img width="1917" height="962" alt="image" src="https://github.com/user-attachments/assets/8602cf12-cded-4051-993d-214388129082" />
 
 
 
@@ -541,82 +541,87 @@ Filtering was narrowed using the unique Process ID (PPID = 0x2980) to avoid fals
 
 ---
 
-### 4.2 Chrome Data Access Confirmation
+### 4.2 System File Access Observation
 
 
-<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/bb9040f0-47e3-4764-abca-bd6c6eeeac9a" />
+### Evidence:
 
+<img width="1917" height="996" alt="image" src="https://github.com/user-attachments/assets/b5996945-0532-41e9-93fc-f4101d14f3dc" />
 
-Multiple 4663 events confirmed access to Chrome user data:
+* Object Name:
 
-```
-C:\Users\Khaled\AppData\Local\Google\Chrome\User Data\Default\History
-```
+  ```
+  C:\Windows\System32\kernel.appcore.dll
+  ```
+* Process:
 
-Observed Access Type:
-
-* ReadData (or ListDirectory)
-
-This confirms the executable successfully accessed Chrome browsing history, validating the lab’s claim of Chrome data theft.
-
----
-
-### 4.3 Data Staging Directory Discovery
-
-
-
-<img width="972" height="547" alt="image" src="https://github.com/user-attachments/assets/fc41dc4b-5c3f-44f3-afe2-0c83f9784a7c" />
-
-
-Further searches using keywords such as History led to discovery of malware-created directories:
-
-```
-C:\Temp\LAB_HISTORY_COPY
-```
-
-This directory contained staged copies of sensitive Chrome history data.
+  ```
+  what_have_i_become.exe
+  ```
 
 ---
 
-### 4.4 Data Packaging (Compression)
+### Analysis:
 
-
-<img width="1920" height="1080" alt="Screenshot 2025-12-15 033725" src="https://github.com/user-attachments/assets/feaceaf7-aaea-4a50-93eb-4d263596c6fe" />
-
-
-<img width="1906" height="947" alt="1111" src="https://github.com/user-attachments/assets/6fd92e28-444d-474e-ab11-4909b9bd6e48" />
-
-
-Inside C:\Temp, the following archive was discovered:
-
-```
-haha_you_noob.zip
-```
-
-Archive Contents:
-
-* LAB_HISTORY_COPY
-* Extracted Chrome History database
-
-This confirms:
-
-* Data collection
-* Local staging
-* Compression for potential exfiltration
+The executable performed read access on a core Windows system DLL (`kernel.appcore.dll`), indicating normal dependency loading behavior during execution.
 
 ---
+
+## 🔹 4.3 Temporary Directory Access & Staging Behavior
+
+### Evidence:
+
+<img width="1915" height="1075" alt="image" src="https://github.com/user-attachments/assets/27be6932-81c7-46a1-b68e-5079bb068177" />
+
+* Object Name:
+
+  ```
+  C:\Users\Khaled\AppData\Local\Temp\_MEI96202
+  ```
+* Process:
+
+  ```
+  what_have_i_become.exe
+  ```
+
+<img width="903" height="702" alt="image" src="https://github.com/user-attachments/assets/ad2a6fdf-e3ad-4ac2-9e35-95cfa4cfcd93" />
+
+---
+
+### Analysis:
+
+The executable accessed a temporary directory with the `_MEI` naming pattern, which is commonly associated with PyInstaller-packed executables.
+
+Further inspection of the directory revealed multiple runtime components, including:
+
+* Python runtime (`python313.dll`)
+* Standard library archive (`base_library.zip`)
+* Cryptographic library (`libcrypto-3.dll`)
+* Network-related modules (`_socket.pyd`)
+
+This indicates that the executable unpacked its runtime environment into the Temp directory during execution.
+
+---
+
+### Conclusion:
+
+This behavior confirms that the malware is a PyInstaller-packed executable that dynamically extracts its components at runtime. The presence of networking and cryptographic modules suggests potential capabilities for data processing or communication.
+
 
 ## 5. Final Findings Summary
 
 Malware Capabilities Confirmed
 
-* Manual execution via user interaction
-* User-level persistence via HKCU Run key
-* Self-spawning process behavior
-* Chrome browsing history access
-* Data staging in temporary directories
-* Compression of stolen data into ZIP archive
-
+Manual execution via user interaction
+User-level persistence via HKCU\Software\Microsoft\Windows\CurrentVersion\Run key
+Self-spawning process behavior (child processes created by original executable)
+No privilege escalation or process injection detected
+Reads critical system DLLs (e.g., kernel.appcore.dll) during execution
+Stages runtime components in Temp directory (_MEI*)
+PyInstaller-packed executable dynamically extracts Python runtime & libraries
+Includes cryptographic (libcrypto-3.dll) and networking (_socket.pyd) modules
+High resource consumption and user disruption (pop-ups, multiple apps opened)
+Full eradication achieved via registry key removal and Temp cleanup
 ---
 
 ## 6. Eradication Status
