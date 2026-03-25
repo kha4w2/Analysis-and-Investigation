@@ -72,6 +72,8 @@ The Local Group Policy Editor was accessed using:
 gpedit.msc
 ```
 
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/b98ddbb7-1e41-4867-a110-ddff37644f75" />
+
 Navigation path:
 
 Computer Configuration
