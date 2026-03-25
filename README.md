@@ -40,6 +40,16 @@ The executable is believed to:
 
 The analyst’s task is to **investigate, contain, analyze, and fully eradicate** the threat using Windows-native tools and event logs, ensuring no residual malicious artifacts remain on the system.
 
+To Prepare the Malicious files of this lab:
+1. download this files:
+
+2. Extract the file 
+<img width="1923" height="677" alt="Screenshot 2026-03-25 183333" src="https://github.com/user-attachments/assets/e6814973-87fa-4487-af97-60de135aae1e" />
+
+3. Open this file
+
+
+
 ---
 
 
@@ -322,7 +332,7 @@ Action taken:
 * HKCU\Software\Microsoft\Windows\CurrentVersion\Run
 
 
-<img width="975" height="734" alt="image" src="https://github.com/user-attachments/assets/56d39a63-e6a5-4758-9850-3269f2b2a60e" />
+<img width="1917" height="1077" alt="image" src="https://github.com/user-attachments/assets/1636b37a-1116-4b0c-af52-c4898f34f8f2" />
 
 ---
 
@@ -337,7 +347,7 @@ Result:
 * No malicious processes executed on startup.
 * The system returned to normal operational state.
 
-<img width="975" height="560" alt="image" src="https://github.com/user-attachments/assets/f5db2946-788c-48a0-8ed7-ee8e459fb076" />
+<img width="1918" height="1013" alt="image" src="https://github.com/user-attachments/assets/ff81540f-94b8-4744-9fc6-ca3831f7f64f" />
 
 
 ---
@@ -416,7 +426,7 @@ The investigation focused on:
 
 * Log Source: Windows Security Log
 
-<img width="975" height="529" alt="image" src="https://github.com/user-attachments/assets/3d7f6b11-e648-4989-b3e8-5a6a19d22c20" />
+<img width="1920" height="1078" alt="image" src="https://github.com/user-attachments/assets/6b1515c0-d5fd-4c2a-88d6-446124f582c6" />
 
 * Primary Event IDs:
 
@@ -433,6 +443,10 @@ The investigation focused on:
 ## 3. Process Creation Analysis (Event ID 4688)
 
 ### 3.1 Initial Malware Execution
+
+
+<img width="1918" height="1003" alt="image" src="https://github.com/user-attachments/assets/625e02fd-63c7-4566-9b49-e80594d47df3" />
+
 
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/28b95025-cf59-4b9e-b9bb-cd3e7cde0d04" />
 
